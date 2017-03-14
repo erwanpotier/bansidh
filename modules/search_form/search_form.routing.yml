@@ -1,0 +1,16 @@
+search_form.content:
+  path: '/search_form'
+  defaults:
+    _controller: '\Drupal\search_form\Controller\SearchFormController::content'
+    _title: 'SEARCH FORM'
+  requirements:
+    _permission: 'access content'
+
+search.form:
+  path: '/search_form'
+  defaults:
+    _form: '\Drupal\search_form\Form\SearchForm'
+    _title: 'Search Form'
+  requirements:
+    _permission: 'access content'
+  

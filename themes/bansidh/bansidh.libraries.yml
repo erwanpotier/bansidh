@@ -1,0 +1,18 @@
+global-styling:
+   version: VERSION
+   css:
+     theme:
+       includes/bootstrap/css/bootstrap.css: {}
+       css/style.css: {} 
+       css/event.css: {} 
+       css/jqvmap.css: {} 
+
+global-js:
+  js:
+    js/interactive.map.js: {}
+    js/jquery.vmap.js: {}
+    js/jquery.vmap.france.js: {}
+    js/jquery.vmap.colorsFrance.js: {}
+    js/coundown-timer.js: {}
+  dependencies:
+    - core/jquery

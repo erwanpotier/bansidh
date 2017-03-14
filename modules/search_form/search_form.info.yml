@@ -1,0 +1,6 @@
+name: SEARCH FORM
+description: Creates a search form.
+package: Custom
+
+type: module
+core: 8.x

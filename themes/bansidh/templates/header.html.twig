@@ -1,0 +1,19 @@
+<header id="header">
+
+  {% if page.headline %}
+    <div id="headline" class= "container">
+      {{ page.headline }}
+    </div>
+  {% endif %}
+
+  {% if page.main_navigation %}
+  <div id="main-navigation" class="container">
+        {{ page.main_navigation }}
+  </div>
+  {% endif %}
+ 
+  <div class="container">
+        {{ page.header }}
+  </div>
+
+</header>

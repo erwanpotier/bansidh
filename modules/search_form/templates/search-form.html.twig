@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{%
+set classes = [
+   'form-group',
+   'btn-default'
+ ]
+%}
+<div class="well-searchbox">
+<form{{ attributes }} class="row form-horizontal" role="form">
+
+      <div class="col-sm-2 block-search-keyword">
+      	{{form.search_key_word}}
+      </div>
+      <div class="col-sm-2 block-search-regions">
+      	{{form.regions}}
+      </div>
+       <div class="col-sm-2 block-search-categories ">
+      	{{form.categories}}
+      </div>
+      <div class="col-sm-2 block-search-date ">
+      	{{form.search_date}}
+      </div>
+      <div class="col-sm-2 block-search-button ">
+      	{{form.submit}}
+      </div>
+</form>
+</div>

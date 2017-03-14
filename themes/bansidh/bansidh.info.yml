@@ -1,0 +1,18 @@
+name: Bansidh
+type: theme
+base theme: classy
+
+Description: "Responsive Drupal 8 Theme"
+package: custom
+core: 8.x
+
+libraries:
+  - bansidh/global-styling
+  - bansidh/global-js
+
+regions:
+  headline: headline
+  header: Header
+  content: Content
+  footer: Footer
+  main_navigation: Main Navigation 

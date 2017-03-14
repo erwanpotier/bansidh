@@ -1,0 +1,7 @@
+{
+    "name": "drupal/search_form",
+    "description": "This module to enable custom search",
+    "type": "drupal-module",
+    "license": "GPL-2.0+"
+}
+

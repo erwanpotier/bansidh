@@ -1,0 +1,6 @@
+search_form.admin:
+  title: 'Search Form module settings'
+  description: 'Search Form admin settings page link'
+  parent: system.admin_config_development
+  route_name: search_form.content
+  weight: 100
