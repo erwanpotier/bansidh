@@ -19,7 +19,6 @@
  */
 #}
 {% import _self as menus %}
-
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
@@ -36,7 +35,13 @@
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
+        {% if user_is_logged_in() and (item.title == "Créer un événement" or item.title == "My account") %}
+          {{ link(item.title, item.url) }}
+        {% elseif not user_is_logged_in() and item.title == "Créer un compte" %}
+          {{ link(item.title, item.url) }}
+        {% elseif item.title == "Log out" or item.title == "Log in" %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}

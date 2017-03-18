@@ -5,6 +5,7 @@ global-styling:
        includes/bootstrap/css/bootstrap.css: {}
        css/style.css: {} 
        css/event.css: {} 
+       css/search-bar.css: {} 
        css/jqvmap.css: {} 
 
 global-js:

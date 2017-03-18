@@ -11,7 +11,10 @@
 		    onRegionClick: function(element, code, region) {
             $url = "/bansidh/"+ code +"";
             window.location.replace($url);
-
             }
 		});
+
+
 	});
+
+

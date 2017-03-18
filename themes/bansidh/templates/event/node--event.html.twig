@@ -71,14 +71,17 @@
  */
 #}
 
+
 <section id="event-banner" role="banner"> 
-    <div class="row item">
-      <div class="img-banner">
+  <div class="container">
+    <div class="row">
+      <div class="img-banner item">
         {{ content.field_banniere }}
       </div> 
       <h2>{{ content.field_titre }} </h2>
     </div>        
-  </div>    
+  </div>   
+  </div>  
 </section>
 
 <section id="timeto">
@@ -87,8 +90,9 @@
       <div class="col-md-4 col-md-offset-2 col-sm-5">
         <h2>Début dans:</h2>
       </div>        
-      <div class="col-sm-7 col-md-6">         
-        <ul id="countdown">
+      <div class="col-sm-7 col-md-6"> 
+      
+        <ul id="countdown" >
           <li>          
             <span class="days time-font">00</span>
             <p>Jours </p>
@@ -109,8 +113,8 @@
       </div>
     </div>
     <div class="row">     
-      <div class="col-md-4 col-md-offset-2 col-sm-5">
-        <p>{{ content.field_date_de_debut }}</p>
+      <div class="col-md-4 col-md-offset-2 col-sm-5" >
+        <p>{{ content.field_date_de_debut }} </p>
         <p>{{ content.field_date_de_fin }}</p>
       </div>
     </div> 
@@ -140,12 +144,14 @@
   <div class="contact-section">
     <div class="container">
       <div class="row">
-        <div class="col-sm-3 col-sm-offset-4">
+        <div class="col-sm-4 col-sm-offset-3">
           <div class="contact-address">
             <h3>Contact</h3>
-            <address>
-              {{content.field_adresse}}<br>
-            </address>
+            <address> {{content.field_rue}}</address>
+            <address> {{content.field_code_postal}} {{content.field_ville}}<br> </address>
+            <address> {{content.field_telephone}} </address>
+            <address> {{content.field_email}} </address>
+            <address> {{content.field_site_web}} </address>
           </div>
         </div>
       </div>
