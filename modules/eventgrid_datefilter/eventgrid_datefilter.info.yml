@@ -1,0 +1,4 @@
+name: EventGrid DateFilter
+description: Add a date filter to the event grid view.
+type: module
+core: 8.x
