@@ -5,15 +5,24 @@ global-styling:
        includes/bootstrap/css/bootstrap.css: {}
        css/style.css: {} 
        css/event.css: {} 
+       css/event-form.css: {} 
        css/search-bar.css: {} 
        css/jqvmap.css: {} 
 
 global-js:
   js:
+    js/responsive.js: {}
     js/interactive.map.js: {}
     js/jquery.vmap.js: {}
     js/jquery.vmap.france.js: {}
     js/jquery.vmap.colorsFrance.js: {}
+    js/array.select.js: {}
+    js/jquery.megaselectlist.js: {}
     js/coundown-timer.js: {}
   dependencies:
     - core/jquery
+
+fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Viga' : {type: external}

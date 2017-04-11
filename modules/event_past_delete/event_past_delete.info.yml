@@ -1,0 +1,6 @@
+name: Event past delete
+description: Deletes events past since more than 1 hours.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

@@ -1,0 +1,99 @@
+
+@media screen and (min-width: 970px) {
+
+  #node-event-form{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px auto auto auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  #node-event-form .form-wrapper{
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  #edit-title-wrapper {
+      grid-column: 1;
+      grid-row: 1 ;
+  }
+  #edit-field-categorie-wrapper {
+      grid-column: 1;
+      grid-row: 2;
+  }
+  #edit-field-region-wrapper {
+      grid-column: 1;
+      grid-row: 3;
+  }
+  #edit-field-description-wrapper {
+      grid-column: 2 / span 4;
+      grid-row: 1 / span 3;
+  }
+
+  #edit-field-date-de-debut-wrapper {
+      grid-column: 1;
+      grid-row: 4;
+  }
+  #edit-field-date-de-fin-wrapper {
+      grid-column: 2;
+      grid-row: 4;
+  }
+  #edit-field-geolocalisation-wrapper {
+      grid-column: 3 / span 4;
+      grid-row: 4 / span 6;
+  }
+
+  #edit-field-rue-wrapper {
+      grid-column: 1;
+      grid-row: 5;
+  }
+  #edit-field-code-postal-wrapper {
+      grid-column: 1;
+      grid-row: 6;
+  }
+  #edit-field-ville-wrapper {
+      grid-column: 2;
+      grid-row: 6;
+  }
+
+  #edit-field-image-wrapper{
+      grid-column: 1 / span 2;
+      grid-row: 8;
+  }
+  #edit-field-banniere-wrapper{
+      grid-column: 3 / span 4;
+      grid-row: 8;
+  }
+  #edit-field-telephone-wrapper{
+  	grid-column: 1 / span 2;
+      grid-row: 7;
+  }
+
+  #edit-field-email-wrapper{
+  	grid-column: 1 / span 2;
+      grid-row: 9;
+  }
+  #edit-field-site-web-wrapper{
+  	grid-column: 3 / span 4;
+    grid-row: 9;
+  }
+  #edit-field-twitter-wrapper{
+    grid-column: 1 / span 2;
+    grid-row: 10;
+  }
+  #edit-field-page-facebook-wrapper{
+    grid-column: 3 / span 4;
+    grid-row: 10;
+  }
+  #edit-revision-log-wrapper{
+  	grid-column: 1;
+    grid-row: 11;
+  }
+  #edit-actions{
+  	grid-column: 3 / span 4;
+    grid-row: 11;
+  }
+
+}

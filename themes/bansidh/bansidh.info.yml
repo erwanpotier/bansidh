@@ -9,6 +9,7 @@ core: 8.x
 libraries:
   - bansidh/global-styling
   - bansidh/global-js
+  - bansidh/fonts
 
 regions:
   headline: headline

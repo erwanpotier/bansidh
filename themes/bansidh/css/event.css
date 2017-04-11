@@ -21,22 +21,24 @@
 **************************/
 
 #timeto {
-  background-color: #C34C39;
-  background-image: url("../images/event-bg.jpg");
-  background-position: center bottom;
-  background-size: contain;
-  background-repeat:no-repeat;
+  background-color: #DA413D; /*Grenadine*/
   position: relative;
   overflow: hidden;
-  padding: 130px 0 100px;
+
 }
 
 #timeto h2 {
   font-size: 42px;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 50px;
 }
 
+#timeto .event_date p{
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+}
 #countdown {
   display: block;
   overflow: hidden;
@@ -48,6 +50,7 @@
   list-style: none;
   display:inline-block;
   margin-right: 40px;
+  margin-top: 20px;
   text-align: center;
   text-transform: uppercase;
   font-size: 18px;
@@ -147,18 +150,41 @@
   font-family: 'Dosis',sans-serif;
 }
 
+/*************************
+****Twitter CSS***********
+**************************/
+#twitter{
+  background-color: #95DEE3; /*island paradise   #D2691E; autumn mapple*/
+  position: relative;  
+  width: 100%;
+}
 
+#twitter .fa-huge{
+    display: block;
+    margin-top: 50px;
+    margin-left: 50px;
+    max-width: 100%;
+    color: #4F84C4; /*marina*/
+    text-shadow: 1px 1px 1px #4F84C4;
+    font-size:12.8em;
+}
+ /* When the screen is less than 600 pixels wide, hide twitter icon */
+@media screen and (max-width: 760px) {
+  #twitter .fa-huge {display: none;}
+
+}
+
+#twitter h2{
+  text-align: center;
+  font-family: 'Viga', sans-serif;
+  color: #4F84C4; /*marina*/
+}
 /*************************
 ******Contact CSS****
 **************************/
 
 .contact-section {
-  background-color: #f7ab24;
-  background-image: url("../images/contact-bg.jpg");
-  background-position:60% 0;
-  background-size:contain;
-  background-repeat:no-repeat;  
-  position: relative;
+  background-color: #F6D155; /* primrose yellow #f7ab24;*/
 }
 
 #contact .container {
@@ -177,4 +203,5 @@
 #contact address {
   font-size: 18px;  
   color: #373737; 
+  margin: 0.1em;
 }

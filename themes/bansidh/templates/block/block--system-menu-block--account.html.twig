@@ -32,7 +32,7 @@
  */
 #}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
-<div class="col-sm-4 col-sm-offset-6">
+<div class="col-sm-5 col-sm-offset-5 col-xs-5 col-xs-offset-4">
 <nav role="navigation" class="block-user-account " aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
   {% if not configuration.label_display %}

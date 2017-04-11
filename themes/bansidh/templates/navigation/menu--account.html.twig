@@ -29,7 +29,7 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes }} class="menu-account">
+      <ul{{ attributes }} class="menu-account" id="responsive-account-menu">
     {% else %}
       <ul>
     {% endif %}
@@ -47,6 +47,13 @@
         {% endif %}
       </li>
     {% endfor %}
+{# make things responsive#}
+      <li>
+        <a href="javascript:void(0);" class="fa fa-bars fa-2x" aria-hidden="true" onclick="responsive_menu_account()"></a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" class="fa fa-search fa-2x" aria-hidden="true" onclick="responsive_search_bar()"></a>
+      </li>
     </ul>
   {% endif %}
 {% endmacro %}

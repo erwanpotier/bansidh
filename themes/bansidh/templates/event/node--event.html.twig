@@ -71,14 +71,13 @@
  */
 #}
 
-
 <section id="event-banner" role="banner"> 
   <div class="container">
     <div class="row">
       <div class="img-banner item">
         {{ content.field_banniere }}
       </div> 
-      <h2>{{ content.field_titre }} </h2>
+      <h2>{{ node.label }}</h2>
     </div>        
   </div>   
   </div>  
@@ -86,56 +85,73 @@
 
 <section id="timeto">
   <div class="container">
-    <div class="row">     
+    <div class="row  count_wrapper">     
       <div class="col-md-4 col-md-offset-2 col-sm-5">
         <h2>Début dans:</h2>
       </div>        
       <div class="col-sm-7 col-md-6"> 
-      
-        <ul id="countdown" >
+        <ul id="countdown" onload="countdown();" >
+
           <li>          
-            <span class="days time-font">00</span>
+            <span class="days time-font"></span>
             <p>Jours </p>
           </li>
           <li>
-            <span class="hours time-font">00</span>
+            <span class="hours time-font"></span>
             <p class="">Heures </p>
           </li>
           <li>
-            <span class="minutes time-font">00</span>
+            <span class="minutes time-font"></span>
             <p class="">Minutes</p>
           </li>
           <li>
-            <span class="seconds time-font">00</span>
+            <span class="seconds time-font"></span>
             <p class="">Seconds</p>
-          </li>       
+          </li>
         </ul>
       </div>
     </div>
-    <div class="row">     
-      <div class="col-md-4 col-md-offset-2 col-sm-5" >
-        <p>{{ content.field_date_de_debut }} </p>
-        <p>{{ content.field_date_de_fin }}</p>
+<script> var event_date = '{{content.field_date_de_debut[0]|json_encode()|raw|slice(61,22)}}';</script>
+    <div class="row">
+      <div class="event_date" >
+        <p>Du {{ content.field_date_de_debut[0] }} au {{ content.field_date_de_fin[0] }}</p> 
       </div>
     </div> 
   </div>
-</section><!--/#timeto-->
+</section><!--/#timeto   | localizeddate('full', 'none')         -->
 
 
 <section id="description">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 description-content">         
-        <h2>About</h2>
+      <div class="col-md-6 description-content">         
+        <h2>Description</h2>
         <p>{{content.field_description}}</p>
       </div>
-      <div class="col-sm-6 description-img">         
+      <div class="col-md-6 description-img">         
        {{content.field_image}} 
       </div>
     </div>  
   </div>
-</section><!--/#Description-->
 
+</section><!--/#twitter-->
+<section id="twitter">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3" >
+         <i class="fa fa-twitter fa-huge" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm-8" >
+         <h2>Tweets de @{{content.field_twitter[0]}}</h2>
+         <a class="twitter-timeline"
+         href="https://twitter.com/{{content.field_twitter[0]}}" data-chrome="noheader nofooter noborders transparent" border-color="#92b6d5" data-height="300">
+         Tweets by @{{content.field_twitter[0]}}
+         </a>
+         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+</section><!--/#twitter-->
 
 <section id="contact">
   <div id="event-map">
@@ -144,14 +160,31 @@
   <div class="contact-section">
     <div class="container">
       <div class="row">
-        <div class="col-sm-4 col-sm-offset-3">
-          <div class="contact-address">
-            <h3>Contact</h3>
-            <address> {{content.field_rue}}</address>
-            <address> {{content.field_code_postal}} {{content.field_ville}}<br> </address>
-            <address> {{content.field_telephone}} </address>
-            <address> {{content.field_email}} </address>
-            <address> {{content.field_site_web}} </address>
+        <div class="col-sm-4 facebook-page">
+
+          <div id="fb-root"></div>
+          <div class="fb-page" 
+            data-href="https://www.facebook.com/{{content.field_page_facebook[0]}}"
+            data-width="380"
+            data-hide-cover="false"
+            data-show-facepile="false"
+            data-show-posts="false">
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <h3>Contact</h3>
+          <div class="row">
+          <div class="col-md-6 contact-address">
+              <address> {{content.field_rue}}</address>
+              <address> {{content.field_code_postal}} </address>
+              <address> {{content.field_ville}} </address>
+            </div>
+            <div class="col-md-6 contact-address">
+              <address> {{content.field_telephone}} </address>
+              <address> {{content.field_email}} </address>
+              <address> {{content.field_site_web}} </address>
+            </div>
+            </div>
           </div>
         </div>
       </div>

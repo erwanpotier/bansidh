@@ -28,15 +28,17 @@
 
 {%
   set classes = [
+    'col-md-7',
+    'col-sm-12',
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
   ]
 %}
 
-<div class="col-md-6" {{ attributes.addClass(classes) }}>
+<div {{ attributes.addClass(classes) }}>
 
-  <div id="vmap" style="width: 430px; height: 460px"></div>
+  <div id="vmap" style="width: 536px; height: 581px"></div>
 
 
 </div>
