@@ -4,8 +4,10 @@ namespace Drupal\twig_extender;
 
 use Drupal\Core\Template\TwigExtension;
 use Drupal\Core\Render\RendererInterface;
-use Drupal\Core\Validation\DrupalTranslator;
 use Drupal\twig_extender\Plugin\Twig\TwigPluginManagerInterface;
+use Drupal\Core\Routing\UrlGeneratorInterface;
+use Drupal\Core\Theme\ThemeManagerInterface;
+use Drupal\Core\Datetime\DateFormatterInterface;
 
 /**
  * Service Provider Class for TwigExtesion Plugins.
@@ -15,10 +17,14 @@ class TwigExtenderService extends TwigExtension {
   /**
    * Construtor.
    */
-  public function __construct(RendererInterface $renderer, TwigPluginManagerInterface $manager) {
-    parent::__construct($renderer);
-    $this->renderer = $renderer;
-    $this->translator = new DrupalTranslator();
+  public function __construct(
+      RendererInterface $renderer,
+      UrlGeneratorInterface $url_generator,
+      ThemeManagerInterface $theme_manager,
+      DateFormatterInterface $date_formatter,
+      TwigPluginManagerInterface $manager
+  ) {
+    parent::__construct($renderer, $url_generator, $theme_manager, $date_formatter);
     $this->pluginManager = $manager;
     $this->plugins = $this->pluginManager->getDefinitions();
   }
