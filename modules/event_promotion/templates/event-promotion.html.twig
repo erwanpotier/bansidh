@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{%
+set classes = [
+   'form-group',
+   'btn-default'
+ ]
+%}
+<div class="well-searchbox">
+<form{{ attributes }} class="row form-horizontal" role="form">
+ {{children}}
+</form>
+</div>

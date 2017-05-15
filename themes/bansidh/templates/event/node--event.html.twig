@@ -70,12 +70,16 @@
  *   in different view modes.
  */
 #}
+<div data-role="page">
 
 <section id="event-banner" role="banner"> 
   <div class="container">
     <div class="row">
       <div class="img-banner item">
         {{ content.field_banniere }}
+      </div> 
+      <div class="img-affiche item">
+        {{content.field_image}}
       </div> 
       <h2>{{ node.label }}</h2>
     </div>        
@@ -90,7 +94,7 @@
         <h2>Début dans:</h2>
       </div>        
       <div class="col-sm-7 col-md-6"> 
-        <ul id="countdown" onload="countdown();" >
+        <ul id="countdown">
 
           <li>          
             <span class="days time-font"></span>
@@ -113,29 +117,48 @@
     </div>
 <script> var event_date = '{{content.field_date_de_debut[0]|json_encode()|raw|slice(61,22)}}';</script>
     <div class="row">
-      <div class="event_date" >
-        <p>Du {{ content.field_date_de_debut[0] }} au {{ content.field_date_de_fin[0] }}</p> 
+      <div class="event_date">
+
+        <p>Du {{ content.field_date_de_debut[0]|json_encode()|raw|slice(61,22)|date("d/m/Y à H:i",  "Europe/Paris") }} au {{ content.field_date_de_fin[0]|json_encode()|raw|slice(61,22)|date("d/m/Y à H:i",  "Europe/Paris") }}</p> 
       </div>
     </div> 
   </div>
 </section><!--/#timeto   | localizeddate('full', 'none')         -->
 
+</div>  
 
-<section id="description">
+{% if content.field_compte_flickr[0] is not null and content.field_album_flickr[0] is not null %}
+<section id="sharephoto" data-role="page">
+  <div id="flickr" class="container">
+<iframe
+  class="rlk-autosize rlk-fullwidth"
+  src="https://www.flickr.com/photos/{{content.field_compte_flickr[0]}}/sets/{{content.field_album_flickr[0]}}/player/"
+  width="480"
+  height="320"
+  frameborder="0"
+  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
+</iframe>
+  </div>    
+</section>     
+{% endif %}
+
+
+<section id="description" data-role="page">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 description-content">         
+      <div class="col-md-6 col-sm-12 description-content">         
         <h2>Description</h2>
         <p>{{content.field_description}}</p>
       </div>
-      <div class="col-md-6 description-img">         
+      <div class="col-md-6 col-sm-12 description-img">         
        {{content.field_image}} 
       </div>
     </div>  
   </div>
 
+{% if content.field_twitter[0] is not null %}
 </section><!--/#twitter-->
-<section id="twitter">
+<section id="twitter" data-role="page">
   <div class="container">
     <div class="row">
       <div class="col-sm-3" >
@@ -152,14 +175,16 @@
     </div>
   </div>
 </section><!--/#twitter-->
+{% endif %}
 
-<section id="contact">
+<section id="contact" data-role="page">
   <div id="event-map">
      {{content.field_geolocalisation}}
   </div><!--/#event-map-->
   <div class="contact-section">
     <div class="container">
       <div class="row">
+{% if content.field_page_facebook[0] is not null %}
         <div class="col-sm-4 facebook-page">
 
           <div id="fb-root"></div>
@@ -171,6 +196,7 @@
             data-show-posts="false">
           </div>
         </div>
+{% endif %}
         <div class="col-sm-8">
           <h3>Contact</h3>
           <div class="row">

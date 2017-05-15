@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * function to search old event in database.
+ *
+ * search older event.
+ */
+function search_old_event() {
+  $date = new DateTime;
+  $dateString = $date->format('Y-m-d H:i:s');
+
+  $query = \Drupal::entityQuery('node')->condition('type', 'event')->condition('field_date_de_fin', $dateString, '<='); // Can change -2 week to -2 year or -3 day
+  $nids = $query->execute();
+
+  return $nids;
+}
+
+/**
+ * function to delete old event, called by queue worker.
+ *
+ * Remove older event.
+ */
+function delete_event($item) {
+    $event = node_load($item);
+    $event->delete();
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Remove older event.
+ */
+/*function event_past_delete_cron() {
+  $queue = \Drupal::queue('event_past_delete_CronQueue');
+  foreach(search_old_event() as $item) {
+    $queue->createItem($item);
+  }
+}
+*/
+/**
+ * Implements hook_cron_queue_info().
+ */
+/*function event_past_delete_cron_queue_info() {
+  $queues = array();
+  $queues['event_past_delete_CronQueue'] = array(
+    'worker callback' => 'delete_event', //function to call for each item
+    'time' => 180, //seconds to spend working on the queue
+  );
+  return $queues;
+}*/
+
+
+function event_past_delete_cron() {
+  $date = new DateTime;
+  $dateString = $date->format('Y-m-d H:i:s');
+
+  $query = \Drupal::entityQuery('node')->condition('type', 'event')->condition('field_date_de_fin', $dateString, '<='); // Can change -2 week to -2 year or -3 day
+  $nids = $query->execute();
+  foreach($nids as $item) {
+    $event = node_load($item);
+    $event->delete();
+  }
+}
+?>

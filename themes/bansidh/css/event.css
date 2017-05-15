@@ -6,9 +6,21 @@
   position: relative;
 }
 
-#event-banner img {
+#event-banner .img-banner img {
   width: 100%;
   height: auto;
+}
+#event-banner .img-affiche img {display: none;}
+
+ /* When the screen is less than 600 pixels wide, hide twitter icon */
+@media screen and (max-width: 720px) {
+  #event-banner .img-banner img {display: none;}
+
+  #event-banner .img-affiche img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 #event-banner h2 {
@@ -50,7 +62,7 @@
   list-style: none;
   display:inline-block;
   margin-right: 40px;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   text-align: center;
   text-transform: uppercase;
   font-size: 18px;
@@ -117,15 +129,56 @@
   width: 1px;
 }
 
+#countdown li .seconds {
+  background-color: #df5a49;
+  border-top: 1px solid #e57b6d;
+  border-left: 1px solid #e57b6d;
+}
+
+
+#timeto span{
+  display: block;
+  font-size: 40px;
+  font-weight: 700;
+  height: 82px;
+  line-height: 79px;
+  width: 500px;
+
+  overflow: hidden;
+  text-align: center;
+  padding: 0;
+  margin-top: 20px;
+  border-radius: 10px;
+  border-right: 1px solid #9e3e2e;
+  border-bottom: 1px solid #9e3e2e;
+  background-color: #F6D155;
+  border-top: 1px solid #e57b6d;
+  border-left: 1px solid #e57b6d;
+}
+/*************************
+****Photo event CSS*******
+**************************/
+#sharephoto{
+  background-color: black;/*#672E3B;   Tawny Port*/
+  width: 100%;
+}
+
+#flickr{
+  position: relative;
+  margin: auto;
+}
+#flickr iframe{
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
 /*************************
 ****Description CSS*******
 **************************/
-
 #description {
   background-color: #75B46E;  
   position: relative;  
   width: 100%;
-  display: flex;
 }
 
 .description-img img {
@@ -133,8 +186,14 @@
   height: auto;
 }
 
+ /* When the screen is less than 600 pixels wide, hide twitter icon */
+@media screen and (max-width: 720px) {
+  .description-img img {display: none;}
+
+}
+
+
 .description-content {
-  width: 50%;
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: cover;

@@ -36,6 +36,35 @@ function initializeClock(id, endtime) {
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
+      //var newBox = document.createElement('span');
+      //newBox.innerHTML = "En cours..."
+      //document.getElementById('clock').appendChild(newBox);
+
+
+// crée un nouveau nœud d'élément <span> vide
+// sans aucun ID, attribut ou contenu
+var newBox = document.createElement("span");
+
+// lui donne un attribut id appelé 'nouveauSpan'
+newBox.setAttribute("id", "startevent");
+
+// crée un peu de contenu pour cet élément.
+var newBox_content = document.createTextNode("En cours...");
+
+// ajoute ce contenu au nouvel élément
+newBox.appendChild(newBox_content);
+
+// Obtient une référence de l'élément devant lequel on veut insérer notre nouveau span
+var suivant = document.getElementById("countdown");
+
+// Obtient une référence du nœud parent
+var parentDiv = suivant.parentNode;
+
+// insère le nouvel élément dans le DOM avant sp2
+parentDiv.replaceChild(newBox, suivant);
+
+
+
     }
   }
 

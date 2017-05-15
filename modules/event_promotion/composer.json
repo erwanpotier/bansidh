@@ -1,0 +1,7 @@
+{
+    "name": "drupal/event_promotion",
+    "description": "This module manage the event promotion",
+    "type": "drupal-module",
+    "license": "GPL-2.0+"
+}
+

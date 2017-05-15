@@ -58,9 +58,7 @@ class SearchForm extends FormBase {
        else{
          if ($taxonomy->depth == 1){
           $parent_name_t2 = $taxonomy->name;
-          if ($taxonomy->tid != 41) {/* Sports Collectifs*/
             $list_categorie[$parent_name_t1][$taxonomy->tid] = $taxonomy->name;
-          }
          }
          else {
           $list_categorie[$parent_name_t1][$parent_name_t2][$taxonomy->tid] = $taxonomy->name;
@@ -72,7 +70,6 @@ class SearchForm extends FormBase {
       '#type' => 'select',
       '#default_value' => NULL,
       '#options' => $list_categorie,
-      '#title' => $this->t('Categories'),
       '#empty_option' => "- Catégories -",
     );
     $form['search_date'] = array(
@@ -113,6 +110,10 @@ class SearchForm extends FormBase {
 
     $options = array('absolute' => TRUE);
 
+    $search_date = $form_state->getValue('search_date');
+    if ($search_date) {
+      $options['query']['search_date'] = $search_date;
+    }
     $regions = $form_state->getValue('regions');
     if ($regions) {
       $options['query']['regions'] = $regions;
@@ -121,23 +122,18 @@ class SearchForm extends FormBase {
     if ($categories) {
       $options['query']['categories'] = $categories;
     }
-    $search_date = $form_state->getValue('search_date');
-    if ($search_date) {
-      $options['query']['search_date'] = $search_date;
-    }
     $search_key_word = $form_state->getValue('search_key_word');
     if ($search_key_word) {
       $options['query']['search_key_word'] = $search_key_word;
     }
-  if ($form_state->hasValue('regions')){
-    $form_state->setRedirect('entity.taxonomy_term.canonical',array('taxonomy_term' => $regions), $options);
-  }
-  else if($form_state->hasValue('categories')){
-    kint($categories);
+  if ($form_state->isValueEmpty('regions')){
     $form_state->setRedirect('entity.taxonomy_term.canonical',array('taxonomy_term' => $categories), $options);
   }
-
+  else{
+    $form_state->setRedirect('entity.taxonomy_term.canonical',array('taxonomy_term' => $regions), $options);
   }
+
+}
   
 }
 

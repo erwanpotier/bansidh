@@ -1,0 +1,6 @@
+name: Event Promotion
+description: Provide a way for user to promote their events.
+package: Custom
+
+type: module
+core: 8.x

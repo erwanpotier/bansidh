@@ -19,6 +19,7 @@ global-js:
     js/array.select.js: {}
     js/jquery.megaselectlist.js: {}
     js/coundown-timer.js: {}
+    js/jquery.flickrembed.js: {}
   dependencies:
     - core/jquery
 

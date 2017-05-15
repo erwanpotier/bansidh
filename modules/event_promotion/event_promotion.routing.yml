@@ -1,0 +1,16 @@
+event_promotion.form:
+  path: '/event_promotion'
+  defaults:
+    _form: '\Drupal\event_promotion\Form\EventPromotion'
+    _title: 'Event Promotion'
+  requirements:
+    _permission: 'access content'
+
+event_promotion.open_modal_form:
+  path: '/user/{user}/modal_event_promotion/{js}'
+  defaults:
+    _title: 'Modal Form'
+    _controller: '\Drupal\event_promotion\Controller\EventPromotionController::openModalForm'
+  requirements:
+    _permission: 'access content'
+    js: 'nojs|ajax'
