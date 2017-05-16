@@ -47,9 +47,9 @@
 #}
 {% include directory ~ '/templates/header.html.twig' %}
 
-<div class="layout-container">
+{#<div class="layout-container container-fluid">#}
 
-  <main role="main">
+  <main role="main" class="container-fluid">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="layout-content container">
@@ -58,6 +58,6 @@
 
   </main>
 
-</div>{# /.layout-container #}
+{#</div> /.layout-container #}
 
 {% include directory ~ '/templates/footer.html.twig' %}
