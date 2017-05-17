@@ -16,10 +16,8 @@ global-js:
     js/jquery.vmap.js: {}
     js/jquery.vmap.france.js: {}
     js/jquery.vmap.colorsFrance.js: {}
-    js/array.select.js: {}
     js/jquery.megaselectlist.js: {}
     js/coundown-timer.js: {}
-    js/jquery.flickrembed.js: {}
   dependencies:
     - core/jquery
 
