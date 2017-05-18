@@ -1,9 +1,8 @@
 
-(function ($, Drupal, drupalSettings) {
 var deadline = new Date(Date.parse(event_date));
-//document.getElementById("timeto").innerHTML = deadline;
+
 initializeClock('countdown', deadline);
-};
+
 
 function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
@@ -72,3 +71,4 @@ parentDiv.replaceChild(newBox, suivant);
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
 }
+

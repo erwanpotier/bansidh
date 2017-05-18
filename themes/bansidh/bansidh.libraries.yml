@@ -12,7 +12,7 @@ global-styling:
 global-js:
   js:
     js/responsive.js: {}
-    js/interactive.map.js: {}
+    js/jquery.interactive.map.js: {}
     js/jquery.vmap.js: {}
     js/jquery.vmap.france.js: {}
     js/jquery.vmap.colorsFrance.js: {}
