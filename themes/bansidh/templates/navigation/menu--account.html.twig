@@ -35,12 +35,16 @@
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes }}>
-        {% if user_is_logged_in() and (item.title == "Créer un événement" or item.title == "My account") %}
+        {% if user_is_logged_in() and item.title == "Créer un événement"  %}
           {{ link(item.title, item.url) }}
+        {% elseif user_is_logged_in() and item.title == "My account" %}
+          {{ link("Mon compte", item.url) }}
         {% elseif not user_is_logged_in() and item.title == "Créer un compte" %}
           {{ link(item.title, item.url) }}
-        {% elseif item.title == "Log out" or item.title == "Log in" %}
-          {{ link(item.title, item.url) }}
+        {% elseif item.title == "Log out"  %}
+          {{ link("Se déconnecter", item.url) }}
+        {% elseif item.title == "Log in" %}
+          {{ link("Se connecter", item.url) }}
         {% endif %}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}

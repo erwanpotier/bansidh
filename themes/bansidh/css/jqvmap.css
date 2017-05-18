@@ -58,4 +58,12 @@
 #vmap{
 	display: block;
 	margin: auto;
+	width: 536px; 
+	height: 581px
+}
+@media screen and (max-width: 680px) {
+	#vmap {
+	  width: 360px; 
+	  height: 400px
+	}
 }
