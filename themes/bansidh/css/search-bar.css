@@ -97,6 +97,14 @@
     right: 15px;
     top: 0;
   }
+
+  .menu-account a.fa-huge{
+  	font-size: 1.8em;
+  }
+  .menu-account.responsive a.fa-huge{
+  	font-size: 1.8em;
+  }
+
 }
 
 /*****************************************/

@@ -215,6 +215,7 @@ main{
 #block-views-block-a-venir-block-1 img, #block-views-block-event-selected-block-1 img{
     display: block;
     margin: auto;
+    height: auto;
     max-width: 100%;
     opacity: 1;
     -webkit-transition: .3s ease-in-out;
@@ -268,6 +269,7 @@ main{
 
 #block-views-block-event-grid-block-1 .thumb img , #block-views-block-event-grid-categorie-block-1 .thumb img  , #block-views-block-user-event-grid-block-1 .thumb img{
     display: block;
+    height: auto;
     max-width: 100%;
     opacity: 1;
     -webkit-transition: .3s ease-in-out;

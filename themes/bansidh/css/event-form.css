@@ -102,6 +102,8 @@
   #edit-actions{
   	grid-column: 1 / span 4;
     grid-row: 13;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
   }
-
 }
