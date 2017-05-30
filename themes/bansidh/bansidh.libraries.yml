@@ -16,7 +16,6 @@ global-js:
     js/jquery.vmap.js: {}
     js/jquery.vmap.france.js: {}
     js/jquery.vmap.colorsFrance.js: {}
-    js/jquery.megaselectlist.js: {}
     js/coundown-timer.js: {}
   dependencies:
     - core/jquery

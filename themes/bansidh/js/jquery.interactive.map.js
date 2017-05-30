@@ -7,7 +7,7 @@
 			borderColor: "#000000",
 			selectedColor: "#EC0000",
 			enableZoom: false,
-			showTooltip: true,
+			showTooltip: false,
 		    onRegionClick: function(element, code, region) {
             $url = "/bansidh/"+ code +"";
             window.location.replace($url);

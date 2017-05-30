@@ -4,7 +4,7 @@
   #node-event-form{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px auto auto auto auto;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px 100px auto;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   }
@@ -25,23 +25,16 @@
       grid-column: 1;
       grid-row: 3;
   }
-  #edit-field-description-wrapper {
-      grid-column: 2 / span 4;
-      grid-row: 1 / span 3;
+  #edit-field-tags-wrapper{
+    grid-column: 1;
+      grid-row: 4;
   }
 
-  #edit-field-date-de-debut-wrapper {
-      grid-column: 1;
-      grid-row: 4;
+  #edit-field-description-wrapper {
+      grid-column: 2 / span 4;
+      grid-row: 1 / span 4;
   }
-  #edit-field-date-de-fin-wrapper {
-      grid-column: 2;
-      grid-row: 4;
-  }
-  #edit-field-geolocalisation-wrapper {
-      grid-column: 3 / span 4;
-      grid-row: 4 / span 6;
-  }
+/***/
 
   #edit-field-rue-wrapper {
       overflow: hidden;
@@ -49,59 +42,75 @@
       grid-row: 5;
   }
   #edit-field-code-postal-wrapper {
-      grid-column: 1;
-      grid-row: 6;
+      grid-column: 2;
+      grid-row: 5;
   }
   #edit-field-ville-wrapper {
       overflow: hidden;
-      grid-column: 2;
+      grid-column: 3;
+      grid-row: 5;
+  }
+  #edit-field-telephone-wrapper{
+    grid-column: 4;
+    grid-row: 5;
+  }
+
+  #edit-field-date-de-debut-wrapper {
+      grid-column: 1;
       grid-row: 6;
   }
 
+  #edit-field-date-de-fin-wrapper {
+      grid-column: 1;
+      grid-row: 7;
+  }
+  #edit-field-geolocalisation-wrapper {
+      grid-column: 2 / span 4;
+      grid-row: 6 / span 7;
+  }
+
+
   #edit-field-image-wrapper{
       grid-column: 1 / span 2;
-      grid-row: 8;
+      grid-row: 9;
   }
   #edit-field-banniere-wrapper{
       grid-column: 3 / span 4;
-      grid-row: 8;
+      grid-row: 9;
   }
-  #edit-field-telephone-wrapper{
-  	grid-column: 1 / span 2;
-      grid-row: 7;
-  }
+
 
   #edit-field-email-wrapper{
   	grid-column: 1 / span 2;
-      grid-row: 9;
+      grid-row: 10;
   }
   #edit-field-site-web-wrapper{
   	grid-column: 3 / span 4;
-    grid-row: 9;
+    grid-row: 10;
   }
   #edit-field-twitter-wrapper{
     grid-column: 1 / span 2;
-    grid-row: 10;
+    grid-row: 11;
   }
   #edit-field-page-facebook-wrapper{
     grid-column: 3 / span 4;
-    grid-row: 10;
+    grid-row: 11;
   }
   #edit-field-compte-flickr-wrapper{
     grid-column: 1 / span 2;
-    grid-row: 11;
+    grid-row: 12;
   }
   #edit-field-album-flickr-wrapper{
     grid-column: 1 / span 2;
-    grid-row: 12;
+    grid-row: 13;
   }
   #edit-revision-log-wrapper{
     grid-column: 3 / span 4;
-    grid-row: 12;
+    grid-row: 13;
   }
   #edit-actions{
   	grid-column: 1 / span 4;
-    grid-row: 13;
+    grid-row: 14;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;

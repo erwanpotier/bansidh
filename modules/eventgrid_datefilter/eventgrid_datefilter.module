@@ -7,7 +7,7 @@ function eventgrid_datefilter_views_query_alter(ViewExecutable $view, QueryPlugi
   // (Example assuming a view with an exposed filter on node title.)
   // If the input for the title filter is a positive integer, filter against
   // node ID instead of node title.
-  if ( (($view->id() == "event_grid_categorie") || ($view->id() == "categorie_map_area")) ) {
+  if ( (($view->id() == "event_grid_categorie") || ($view->id() == "categorie_map_area")) && isset( $query->where[0]['conditions'][1]['field'])) {
     // foreach top level condition group
     foreach ($query->where as &$condition_group) {
       foreach ($condition_group['conditions'] as &$condition) {
@@ -30,6 +30,22 @@ function eventgrid_datefilter_views_query_alter(ViewExecutable $view, QueryPlugi
         // If this is the part of the query filtering on title, chang the
         // condition to filter on node ID.
         if ( $condition['field'] ==  $query->where[0]['conditions'][1]['field']) {
+          $condition = array(
+            'field' => 'node__field_date_de_debut.field_date_de_debut_value',
+            'value' => $condition['value'],
+            'operator' => '>=',
+          );
+        }
+      }
+    }
+  }
+  else if ((($view->id() == "event_grid_tags") || ($view->id() == "tags_map_area")) && isset( $query->where[0]['conditions'][1]['field'])) {
+    // foreach top level condition group
+    foreach ($query->where as &$condition_group) {
+      foreach ($condition_group['conditions'] as &$condition) {
+        // If this is the part of the query filtering on title, chang the
+        // condition to filter on node ID.
+        if (isset($condition['field']) &&  $condition['field'] ==  $query->where[0]['conditions'][0]['field']) {
           $condition = array(
             'field' => 'node__field_date_de_debut.field_date_de_debut_value',
             'value' => $condition['value'],

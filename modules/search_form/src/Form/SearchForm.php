@@ -31,10 +31,26 @@ class SearchForm extends FormBase {
 
     $form['#theme'] = 'search_form';
     $form['search_key_word'] = array(
-      '#type' => 'search',
+     /* '#type' => 'search',
       '#default_value' => Null,
       '#placeholder' => "Mots clés?",
-      '#size' => 30,
+      '#size' => 30,*/
+    '#type' => 'entity_autocomplete',
+    //'#tags' => TRUE,
+    '#default_value' => Null,
+    '#placeholder' => "Mot clé? Tag?",
+    '#size' => 30,
+    '#target_type' => 'taxonomy_term',
+    '#selection_settings' => [
+        'include_anonymous' => FALSE,
+        'target_bundles' => array('tags'),
+    ],
+    '#ajax' => array(
+      // Effect when replacing content. Options: 'none' (default), 'slide', 'fade'.
+      'effect' => 'fade',
+      // Javascript event to trigger Ajax. Currently for: 'onchange'.
+      'event' => 'autocompleteclose',
+    ),
     );
     $vocabulary_region = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('region', $parent = 0, $max_depth = NULL, $load_entities = FALSE);
     $list = array();
@@ -83,8 +99,11 @@ class SearchForm extends FormBase {
       '#button_type' => 'primary',
     );
 
+    $form['#attached']['library'][] = 'search_form/tagsinput_autocomplete';
+    //$form['#attached']['drupalSettings']['search_form']['search-form-styling'] ['variable'] = 'value';
       return $form;
   }
+
 
   /**
    * {@inheritdoc}
@@ -97,8 +116,8 @@ class SearchForm extends FormBase {
       }
     }
 
-  if (($form_state->isValueEmpty('regions'))  && ($form_state->isValueEmpty('categories'))) {
-        $form_state->setErrorByName('regions', t('Vous devez remplir un champs parmi categories et regions.'));
+  if (($form_state->isValueEmpty('regions'))  && ($form_state->isValueEmpty('categories')) && ($form_state->isValueEmpty('search_key_word'))) {
+        $form_state->setErrorByName('regions', t('Vous devez remplir un champs parmi categories , regions ou Mots clés? Tags?'));
       }
 
   }
@@ -126,7 +145,11 @@ class SearchForm extends FormBase {
     if ($search_key_word) {
       $options['query']['search_key_word'] = $search_key_word;
     }
-  if ($form_state->isValueEmpty('regions')){
+
+  if ($form_state->isValueEmpty('categories') && $form_state->isValueEmpty('regions')){
+    $form_state->setRedirect('entity.taxonomy_term.canonical',array('taxonomy_term' => $search_key_word), $options);
+  }
+  elseif ($form_state->isValueEmpty('regions')){
     $form_state->setRedirect('entity.taxonomy_term.canonical',array('taxonomy_term' => $categories), $options);
   }
   else{

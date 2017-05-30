@@ -1,0 +1,7 @@
+tagsinput_autocomplete:
+  version: 1.x
+  js:
+    js/tagsinput_autocomplete.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

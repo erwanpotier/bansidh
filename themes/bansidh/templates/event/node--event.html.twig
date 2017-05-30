@@ -70,9 +70,9 @@
  *   in different view modes.
  */
 #}
-<div data-role="page">
+{#<div data-role="page">#}
 
-<section id="event-banner" role="banner"> 
+<section id="event-banner"  role="banner"> 
   <div class="container">
     <div class="row">
       <div class="img-banner item">
@@ -125,7 +125,7 @@
   </div>
 </section><!--/#timeto   | localizeddate('full', 'none')         -->
 
-</div>  
+{#</div>#}  
 
 {% if content.field_compte_flickr[0] is not null and content.field_album_flickr[0] is not null %}
 <section id="sharephoto" data-role="page">
@@ -146,7 +146,12 @@
 <section id="description" data-role="page">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-sm-12 description-content">         
+      <div class="col-md-6 col-sm-12 description-content">     
+        <div class="tag-list">
+        {{content.field_tags}}
+        {{content.field_region}}
+        {{content.field_categorie}}
+        </div>
         <h2>Description</h2>
         <p>{{content.field_description}}</p>
       </div>
