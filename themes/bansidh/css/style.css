@@ -66,10 +66,7 @@ h1, h2, h3, h4{
 
 #headline{
 	background-color: rgba(247, 120, 107, 1);
-}
-
-.region-headline{
-	margin-bottom:  : 5px;
+  z-index: 10;
 }
 
 /******* menu footer bansidh block***************/
@@ -89,7 +86,7 @@ h1, h2, h3, h4{
 }
 
 #block-bansidh-footer a{
-  color: #f2f2f2;
+  color: #ABC9B9; /* couleur vert pale color: #f2f2f2;*/
   padding-right: 30px;
   text-decoration: none;
   text-align: center;
@@ -203,12 +200,12 @@ h1, h2, h3, h4{
 }
 
 footer{
-	background-color: rgba(247, 120, 107, 1);
-    height: 100px;
+	background-color: #242729;  /*couleur gris/vert stack/overflow*/
+  height: 100px;
 }
 
 body{
-    background-color: rgba(247, 120, 107, 1);
+    background-color:  #242729; /*rgba(247, 120, 107, 1);*/
 }
 
 main{

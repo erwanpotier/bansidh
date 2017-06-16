@@ -12,6 +12,7 @@ global-styling:
 global-js:
   js:
     js/responsive.js: {}
+    js/scroll-bar.js: {}
     js/jquery.interactive.map.js: {}
     js/jquery.vmap.js: {}
     js/jquery.vmap.france.js: {}
