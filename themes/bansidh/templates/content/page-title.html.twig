@@ -14,6 +14,15 @@
 #}
 {{ title_prefix }}
 {% if title %}
-  <h1{{ title_attributes.addClass('page-title') }}>{{ title }}</h1>
+        {% if title == "Website feedback"  %}
+          <h1{{ title_attributes.addClass('page-title interface') }}>Contact</h1>
+        {% elseif title == "Log in" %}
+          <h1{{ title_attributes.addClass('page-title interface') }}>Se connecter</h1>
+        {% elseif title == "Create new account" %}
+          <h1{{ title_attributes.addClass('page-title interface') }}>Créer un compte</h1>
+        {% else %}
+            <h1{{ title_attributes.addClass('page-title') }}>{{ title }}</h1>
+        {% endif %}
+
 {% endif %}
 {{ title_suffix }}
